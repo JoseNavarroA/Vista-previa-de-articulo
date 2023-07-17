@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Article preview component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    html{
+      background-image: url("https://www.solofondos.com/wp-content/uploads/2021/10/1859.jpg");
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    body{
+      background: white;
+      width: 900px;
+      height: 300px;
+      border: 2px outset white;
+      border-radius: 10px;
+    }
+    .tarjeta{
+      gap: 40px;
+      display: flex;
+      width: 900px;
+      height: 100%;
+      position: relative;
+    }
+    .img{
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+    .img img{
+      width: 300px;
+      height: 300px;
+    }
+    .foot{
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      align-items: end;
+      justify-items: start;
+    }
+    .info{
+      display: flex;
+      height: 60px;
+      gap: 10px;
+      border-radius: 30px;
+      background: linear-gradient(45deg, #FFEDDB, transparent);
+
+    }
+    .info p {
+      width: 130px;
+    }
+    
+    .foto img {
+      border-radius: 30px;
+    }
+    .btnshare{
+      width: 20px;
+      height: 15px;
+    }
+    .share:hover{
+      background: white;
+    }
+    .share{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 30px;
+      background: #D1D1D1 ;
+      width: 40px;
+      height: 40px;
+    }
+    .tableShare img{
+      width: 20px;
+      height: 20px;
+    }
+    .tableShare{
+      background: gray ;
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      border-radius: 20px;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      padding: 0 10px 0 10px;
+      top: 173px;
+      right: 46px;
+    }
+    .inactive{
+      display: none;
+    }
+    @media(max-width:900px){
+      body{
+      width: 300px;
+      background-size: cover;
+      height: 90%;
+      margin: 20px 0 0 20px;
+
+    }
+    .img{
+      height: 250px;
+    }
+    .img img{
+      height: 250px;
+    }
+    .tarjeta{
+      flex-direction: column;
+      width: 300px;
+
+    }
+    h1{
+      font-size: 1rem;
+    }
+    .letter{
+      width: revert;
+
+    }
+    .tableShare{
+      right: 3px;
+      top: 427px;
+    }
+    }
+  </style>
+</head>
+<body>
+  <div class="tarjeta">
+    <div class="img">
+      <img src="./images/drawers.jpg" alt="" width="b">
+    </div>
+  <div class="letter">
+  <h1>
+    Shift the overall look and feel by adding these wonderful 
+    touches to furniture in your home
+  </h1>
+  <p>
+    Ever been in a room and felt like something was missing? Perhaps 
+    it felt slightly bare and uninviting. I’ve got some simple tips 
+    to help you make any room feel complete.
+  </p>  
+    <div class="foot">
+      
+      <div class="info">
+        <div class="foto">
+          <img src="./images/avatar-michelle.jpg" alt="Michelle" width="60px">
+        </div>
+        <p> 
+          Michelle Appleton
+          28 Jun 2020
+        </p>
+      </div>
+      <div class="share" onclick="menuShare()">
+        <!-- <input class="share" type="button" value="src=./images/icon-share.svg"> -->
+        <img class="btnshare"src="./images/icon-share.svg" alt="Share">
+      </div>
+      
+    </div>
+    </div>
+    <div class="tableShare inactive">
+      <p>Share</p>
+      <img src="./images/icon-facebook.svg" alt="">
+      <img src="./images/icon-twitter.svg" alt="">
+      <img src="./images/icon-pinterest.svg" alt="">
+    </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">José Navarro</a>.
+  </div>
+  
+  <script>
+    function menuShare() {
+      const share = document.querySelector('.tableShare');
+      share.classList.toggle("inactive")
+      
+    }
+    </script>
+</body>
+</html>
